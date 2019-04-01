@@ -1,15 +1,24 @@
 import React from 'react'
 
+//string, number (wyświetlane)
 const reactCanDisplayString = 'Ala ma kota'
 const reactCanDisplayNumber = 16
 
-const reactCanNotDisplayBoolean = true      //nie wyświetla nic (ale nie pokazuje błedu)
+//boolean, null, undefined (niewyświetlane)
+const reactCanNotDisplayBoolean = true      
 const reactCanNotDisplayNull = null
 const reactCanNotDisplayUndefined = undefined
 
+//wartości złożone (wyświetlane)
 const reactCanDisplayFunctionCall = () => 'Ala ma psa'
 const reactCanDisplayArray = ['Ala', 'Ola', 'Ela']
 const reactCanDisplayReactElement = <b>Gruba Ala</b>
+
+//obiekt (błąd)
+const reactShowsErrorWhenObject = {
+    name: 'Marysia'
+}
+
 
 const WhatReactCanDisplay = (props) => (
     <div>
@@ -35,19 +44,19 @@ const WhatReactCanDisplay = (props) => (
         </p>
         <h4>Function: </h4>
         <p>
-            {reactCanDisplayFunctionCall}       {/*Komentarz*/}
+            {reactCanDisplayFunctionCall}       
         </p>
         <h4>Function call: </h4>
         <p>
             {reactCanDisplayFunctionCall()}
         </p>
-        <h4>Array: </h4>
-        <p>                                 
-            {reactCanDisplayArray}     {/*wyświetla elementy tablicy, obok siebie, skleja je*/}
-        </p>
         <h4>React element: </h4>
         <p>
             {reactCanDisplayReactElement}
+        </p>
+        <h4>Array: </h4>
+        <p>                                 
+            {reactCanDisplayArray}     {/*wyświetla elementy tablicy, obok siebie, skleja je*/}
         </p>
         <h4>Array mapping: </h4>                
         <ul>                                 
@@ -63,6 +72,10 @@ const WhatReactCanDisplay = (props) => (
                 )
             }     
         </ul>
+        <h4>Object: </h4>
+        {/* <p>
+            {reactShowsErrorWhenObject}
+        </p> */}
     </div>
 )
 
